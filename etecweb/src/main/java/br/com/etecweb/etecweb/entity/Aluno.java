@@ -18,26 +18,26 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Aluno {
-  //atributos
-    @Id
-     @GeneratedValue(strategy = GenerationType.AUTO)
-     
-    private Integer idAluno;
-    @Column(nullable = false, length = 40)
-    private String nomeAluno;
-     @Column(nullable = false, length = 11)
-    private String cpfAluno;
-    @Column(nullable = false, length  = 30 )
-    private String enderecoAluno;
-    @Column(nullable = false, length  = 11 )
-    private String telefoneAluno;
+  // atributos
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private Integer raAluno;
-  //Método 1 pra muitos
-@ManyToOne
-@JoinColumn(name = "idCurso-fk")
-private Curso curso;
-@ManyToOne
-@JoinColumn(name = "idCidade-fk")
-private Cidade cidade;
+  private Integer idAluno;
+  @Column(nullable = false, length = 40)
+  private String nomeAluno;
+  @Column(nullable = false, length = 11)
+  private String cpfAluno;
+  @Column(nullable = false, length = 30)
+  private String enderecoAluno;
+  @Column(nullable = false, length = 11)
+  private String telefoneAluno;
+
+  private Integer raAluno;
+  // Método 1 pra muitos
+  @ManyToOne
+  @JoinColumn(name = "idCurso-fk")
+  private Curso curso;
+  @ManyToOne
+  @JoinColumn(name = "idCidade-fk")
+  private Cidade cidade;
 }
