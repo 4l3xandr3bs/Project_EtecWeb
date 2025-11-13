@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de cidades</title>
+</head>
+<body>
+    <h1 align="center"><label for="Lista cidades"></label></h1>
+    <h3 align="center"><a href="/cidades/criar">Cadastrar</a></h3>
+    <table align="center" border="1">
+        <tr>
+            <td colspan="9" align="center">Lista da cidade </td>
+        </tr>
+        <tr>
+            
+            <th>ID</th> 
+            <th>Nome</th>
+            <th>Periodo</th>
+            <th colspan="2">Acoes</th>
+        </tr>
+        <tr th:each="cidade : ${cidades}">
+            <td th:text="${cidade.idCidade}">*</td>
+            <td th:text="${cidade.nomeCidade}">*</td>
+            <td th:text="${cidade.estadoCidade}">*</td>
+            <td><a th:href="@{/cidades/editar/{id}(id=${cidade.idCidade})}">Editar</a></td>
+            <td><a th:href="@{/cidades/excluir/{id}(id=${cidade.idCidade})}">Excluir</a></td>
+        </tr>
+    </table>
+</body>
+</html>

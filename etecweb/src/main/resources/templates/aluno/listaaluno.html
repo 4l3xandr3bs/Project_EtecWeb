@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de alunos</title>
+</head>
+<body>
+    <h1 align="center">lista de Alunos</h1>
+    <body align="center"><a href="/alunos/criar">Cadastrar</a></body>
+    <table align="center" border="1">
+          <tr>
+            <td colspan="10" align="center">Lista de Alunos</td>
+          </tr>
+<tr>
+    <th>ID</th>
+    <th>CPF</th>
+    <th>RM</th>
+    <th>Curso</th>
+    <th>Nome</th>
+    <th>Endereço</th>
+    <th>Telefone</th>
+
+      <th colspan="2">Ações</th>
+</tr>
+<tr th:each="aluno : ${alunos}">
+    <td th:text="${aluno.idAluno}">*</td>
+    <td th:text="${aluno.nomeAluno}">*</td>
+    <td th:text="${aluno.cpfAluno}">*</td>
+    <td th:text="${aluno.raAluno}">*</td>
+    <td th:text="${aluno.telefoneAluno}">*</td>
+    <td th:text="${aluno.enderecoAluno}">*</td>
+    <td th:text="${aluno.curso.nomeCurso}">*</td>
+    <td th:text="${aluno.Cidade.nomeCidade}">*</td>
+    <td>
+        <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
+        <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Excluir</a>
+    </td>
+    
+</tr>
+
+    </table>
+</body>
+</html>
